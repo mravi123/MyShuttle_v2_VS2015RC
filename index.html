@@ -10,7 +10,7 @@
     </style>
   </head>
   <div id='nonApplyDiv' class='myDiv'></div>
-          <script type="text/javascript">
+                  <script type="text/javascript">
           var http = new XMLHttpRequest();
           http.onreadystatechange = function () {
             if (this.readyState === 4 && this.status === 200) {
@@ -24,7 +24,7 @@
               header.append(node);
             }
           };
-          http.open("GET", "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/demo/survey.json");
+          http.open("GET", "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/TIPAAS/survey.json");
           http.send();
         </script>
 </html>
