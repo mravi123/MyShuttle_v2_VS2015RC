@@ -1,29 +1,31 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title>Page Title</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <style>    .ph-form {    margin: 30px;    width: 50%;    display:flex;   }       </style>
-</head>
-<body>
-  <div class="ph-form" id="form-container">
-      <script type="text/javascript">
-              var http = new XMLHttpRequest();
-              http.onreadystatechange = function () {
-                if (this.readyState === 4 && this.status === 200) {
-                  window.phenom = {
-                      schema: JSON.parse(this.responseText),
-                  };
-                  var header = document.getElementsByTagName("head")[0];
-                  var node = document.createElement("script");
-                  node.type = "text/javascript";
-                  node.src = "https://cdn-prod-static.phenompeople.com/CareerConnectResources/COMMON/js/applyStudioBundles/nonapply/v1/nonApply_form_renderer.js"; // https://dev-ng-static.phenompeople.com/CareerConnectResources/TEST/applyThankYouRenderer.js // FORM_renderer11.js"; // test/test/FORM_renderer12.js";
-                  header.append(node);
-                }
+<!-- Add bootstrap reference if not already exists→
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ <!-- Embed css here or add any css file as reference -->
+<style>    .ph-form {    margin: 30px;    width: 50%;    display:flex;   }       </style>
+  </head>
+
+ <!-- Placeholder div for dynamic JTC form -->
+  <div id=’form-container’ class='ph-form’></div>
+<!-- Script to initiate generation of dynamic form -->
+  <script type="text/javascript">
+          var http = new XMLHttpRequest();
+          http.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+              window.phenom = {
+                  schema: JSON.parse(this.responseText),
               };
-              http.open("GET", "https://cdn-prod-static.phenompeople.com/CareerConnectResources/NONAPPLY/PARSONS/JTC_form_schema.json"); // https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/parsons-test/jtcResumeJtnBool.json
-              http.send();
-     </script>
-  </div>
-</body>
+              var header = document.getElementsByTagName("head")[0];
+              var node = document.createElement("script");
+              node.type = "text/javascript";
+              node.src = "https://cdn-prod-static.phenompeople.com/CareerConnectResources/COMMON/js/applyStudioBundles/nonapply/v1/nonApply_form_renderer.js";
+              header.append(node);
+            }
+          };
+<!-- Load the JTC form schema -->
+          http.open("GET", "https://cdn-prod-static.phenompeople.com/CareerConnectResources/NONAPPLY/PARSONS/JTC_form_schema.json");
+          http.send();
+        </script>
 </html>
