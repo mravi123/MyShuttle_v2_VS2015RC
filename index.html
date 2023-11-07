@@ -9,22 +9,9 @@
 }
     </style>
   </head>
-  <div id='nonApplyDiv' class='myDiv'></div>
-                  <script type="text/javascript">
-          var http = new XMLHttpRequest();
-          http.onreadystatechange = function () {
-            if (this.readyState === 4 && this.status === 200) {
-              window.phenom = {
-                  schema: JSON.parse(this.responseText),
-              };
-              var header = document.getElementsByTagName("head")[0];
-              var node = document.createElement("script");
-              node.type = "text/javascript";
-              node.src = "https://dev-ng-static.phenompeople.com/CareerConnectResources/COMMON/js/applyStudioBundles/nonapply/nonapply_form_renderer.js";
-              header.append(node);
-            }
-          };
-          http.open("GET", "https://dev-ng-static.phenompeople.com/CareerConnectResources/NONAPPLY/TIPAAS/survey2.json");
-          http.send();
-        </script>
+  <div id="phenom-form-render-container" data-phenom-form="U2FsdGVkX1+eD8I2cy8SizD4KwQ1mJjHWZFMz2tDb8clEeUTg9TaQVuzbcuOFf6fmt59RzBOOMisHADrejkjbvhQZiBWLTmutq3YqR/TKqSOyPfvMu5fBFlFYLm11PikxcnHRdngYvZw2Lnj+hxpbAAec/QRs1HyIAVVsP+OEzBtMdySDdfoj8VuNmJj+lmg8KZioZzI5Ih1O94L+vXLOEfQBytEQ36M7kLG+TXPmEmy+0DESQjATpcNBPG0WiCHdTEATWWtooHFxqS+zTJkDA==">
+      <script src="https://cdn-stg-static.phenompeople.com/CareerConnectResources/COMMON/js/injectableRenderer/loadPhenomForm.js">
+      </script>
+    </div>
+
 </html>
